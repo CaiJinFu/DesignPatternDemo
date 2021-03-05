@@ -19,6 +19,9 @@ class MainClass {
     proxy();
   }
 
+  /**
+   * 代理模式
+   */
   private static void proxy() {
     // 代理模式：为其他对象提供代理对象，以控制对这个对象的访问。
     // 静态代理模式
