@@ -15,13 +15,12 @@ import proxy.RealSubject2;
  * @chang time
  */
 class MainClass {
+
   public static void main(String[] args) {
     proxy();
   }
 
-  /**
-   * 代理模式
-   */
+  /** 代理模式 */
   private static void proxy() {
     // 代理模式：为其他对象提供代理对象，以控制对这个对象的访问。
     // 静态代理模式
@@ -37,8 +36,8 @@ class MainClass {
             java.lang.reflect.Proxy.newProxyInstance(
                 classLoader, realSubject.getClass().getInterfaces(), dynamicProxy);
     proxyInstance.doSomething();
-    //注意这里，后面会有讲解
-    System.out.println("Proxy : "+ proxyInstance.getClass().getName());
+    // 注意这里，后面会有讲解
+    System.out.println("Proxy : " + proxyInstance.getClass().getName());
 
     System.out.println("===================RealSubject2========================= ");
     RealSubject2 realSubject2 = new RealSubject2();
@@ -49,9 +48,9 @@ class MainClass {
             java.lang.reflect.Proxy.newProxyInstance(
                 classLoader2, realSubject2.getClass().getInterfaces(), dynamicProxy2);
     proxyInstance2.doSomething();
-    System.out.println("Proxy : "+ proxyInstance2.getClass().getName());
+    System.out.println("Proxy : " + proxyInstance2.getClass().getName());
     ISubject proxyInstance1 = (ISubject) new ProxyFactory(realSubject2).getProxyInstance();
     proxyInstance1.doSomething();
-    System.out.println("Proxy : "+ proxyInstance1.getClass().getName());
+    System.out.println("Proxy : " + proxyInstance1.getClass().getName());
   }
 }
