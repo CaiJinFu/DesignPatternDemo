@@ -29,6 +29,7 @@ class MainClass {
 
   /**
    * 策略模式：定义了一系列的算法，并将每一个算法封装起来，而且使他们还可以互相替换。
+   * 在Android中，设置动画的插值器就是策略模式。
    */
   private static void strategyPattern() {
     TranficCalculator tranficCalculator = new TranficCalculator();
@@ -43,6 +44,7 @@ class MainClass {
 
   /**
    * 原型模式：用原型实例指定创建对象的种类，并通过拷贝这些原型创建新的对象。
+   * 在Android中，ArrayList的clone就是原型模式。
    */
   private static void prototypePattern() {
     User user = new User();
