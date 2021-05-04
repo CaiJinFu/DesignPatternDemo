@@ -6,6 +6,9 @@ import proxy.ProxyFactory;
 import proxy.ProxySubject;
 import proxy.RealSubject;
 import proxy.RealSubject2;
+import strategy.BusStrategy;
+import strategy.SubwayStrategy;
+import strategy.TranficCalculator;
 
 /**
  * @name DesignPatternDemo
@@ -20,7 +23,22 @@ class MainClass {
 
   public static void main(String[] args) {
     // proxy();
-    prototypePattern();
+    // prototypePattern();
+    strategyPattern();
+  }
+
+  /**
+   * 策略模式：定义了一系列的算法，并将每一个算法封装起来，而且使他们还可以互相替换。
+   */
+  private static void strategyPattern() {
+    TranficCalculator tranficCalculator = new TranficCalculator();
+    //设置计算策略
+    tranficCalculator.setStrategy(new BusStrategy());
+    //计算价格
+    System.out.println("公交车乘16公里的价格：" + tranficCalculator.calculatePrice(16));
+
+    tranficCalculator.setStrategy(new SubwayStrategy());
+    System.out.println("地铁乘16公里的价格：" + tranficCalculator.calculatePrice(16));
   }
 
   /**
